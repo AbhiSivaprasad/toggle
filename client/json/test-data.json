@@ -24,5 +24,15 @@
     "profile": {
       "name": "Ivan Chub"
     }
+  },
+  "sidebar": {
+    "classes": {
+      "classList": [
+        "Econ 116",
+        "Psychology 101",
+        "Astronomy 101",
+        "Introductory Physics"
+      ]
+    }
   }
 }

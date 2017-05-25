@@ -2,7 +2,6 @@ import * as React from "react";
 import {IAppData} from "../data/IAppData";
 import {Feed} from "./Feed";
 import {Tabs, TabList, Tab, TabPanel} from "react-tabs";
-import {ClassViewSideBar} from "./ClassViewSideBar";
 
 export class ClassView extends React.Component<IClassState, IClassState> {
     public state: IClassState;
@@ -36,7 +35,6 @@ export class ClassView extends React.Component<IClassState, IClassState> {
                         <iframe src="http://deadsimplechat.com/+CcNKO" width="800px" height="600px"></iframe>
                     </TabPanel>
                 </Tabs>
-                <ClassViewSideBar/>
             </div>
         );
     }

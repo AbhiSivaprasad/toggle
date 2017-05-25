@@ -1,5 +1,7 @@
 import {IClassListData} from "./IClassListData";
-export interface IProfileData {
-    name: string;
+/**
+ * Created by Abhinand on 5/25/2017.
+ */
+export interface ISideBarData {
     classes: IClassListData;
 }
