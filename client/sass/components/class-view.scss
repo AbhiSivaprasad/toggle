@@ -1,0 +1,48 @@
+@import "../common";
+@import "../misc/drop-shadow";
+
+$class-view-border-radius: 20px;
+
+.class-view {
+  margin: 20px;
+  display: flex;
+  align-content: stretch;
+
+  .ReactTabs {
+    background-color: rgb(232, 232, 232);
+    overflow: hidden;
+    border-radius: $class-view-border-radius;
+    width: auto;
+    flex-grow: 1;
+    @include drop-shadow();
+
+    .ReactTabs__TabList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $accent-color;
+      padding-left: $class-view-border-radius;
+      padding-right: $class-view-border-radius;
+      height: 50px;
+      font-size: 1.2em;
+
+      .ReactTabs__Tab {
+        display: inline-block;
+        color: white;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+
+      .ReactTabs__TabPanel--selected {
+        font-weight: bold;
+      }
+    }
+
+    .ReactTabs__TabPanel {
+      min-height: 200px;
+    }
+  }
+}

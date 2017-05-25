@@ -1,0 +1,41 @@
+@import "../common";
+
+$current-class-height: 50px;
+
+.header {
+  background-color: white;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-item {
+    $header-item-margin: 40px;
+    margin-left: $header-item-margin;
+    margin-right: $header-item-margin;
+  }
+
+  .logo {
+    @extend .header-item;
+    font-size: 2em;
+    font-weight: bold;
+    color: $accent-color;
+  }
+
+  .current-class {
+    @extend .header-item;
+    background-color: $accent-color;
+    color: white;
+    height: $current-class-height;
+    line-height: $current-class-height;
+    padding-left: $current-class-height / 2;
+    padding-right: $current-class-height / 2;
+    vertical-align: center;
+    border-radius: $current-class-height / 2;
+
+  }
+
+  .profile {
+    @extend .header-item;
+  }
+}

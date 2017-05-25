@@ -1,0 +1,29 @@
+.question-answer-feed-item {
+  width: 400px;
+  display: inline-block;
+  border-radius: 4px;
+  margin: 20px;
+  overflow: hidden;
+  background-color: white;
+  padding: 10px;
+
+  .question-author {
+    font-size: 0.8em;
+    color: darken(white, 50);
+    margin-bottom: 4px;
+  }
+
+  .question {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .best-answer {
+    margin-bottom: 10px;
+  }
+
+  .best-answer-author {
+    @extend .question-author;
+    float: right;
+  }
+}

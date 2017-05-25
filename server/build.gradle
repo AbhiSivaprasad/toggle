@@ -1,0 +1,20 @@
+group 'com.teachr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+mainClassName = 'main.Program'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile "com.sparkjava:spark-core:2.5.5"
+    compile group: 'com.sparkjava', name: 'spark-template-velocity', version: '2.5.5'
+}
+

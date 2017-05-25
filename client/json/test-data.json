@@ -1,0 +1,28 @@
+{
+  "feed": {
+    "feedItems": [
+      {
+        "type": 0,
+        "id": "70966990-6d26-4e3f-bb73-dccf81079e05",
+        "question": "What is the most valuable programming skill at the moment?",
+        "authorName": "Ivan Chub",
+        "authorID": "67dd6173-0396-4b5b-9b10-9f93d16d8952",
+        "bestAnswer": {
+          "authorName": "Abhi Sivaprasad",
+          "authorID": "ec77f7d0-5793-4cc9-b22f-d5669a2e32f3",
+          "answerText": "Just the other day, I was talking with a student of mine on a Google Hangout about this very same topic. At the end of our conversation, here’s what he said to me:",
+          "upvotes": 87,
+          "downvotes": 5
+        },
+        "otherAnswers": []
+      }
+    ]
+  },
+  "header": {
+    "logoUrl": "#",
+    "currentClassName": "Introduction to Computer Science",
+    "profile": {
+      "name": "Ivan Chub"
+    }
+  }
+}
