@@ -1,0 +1,26 @@
+@import "../misc/drop-shadow";
+
+.side-bar-class-list {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  .side-bar-class-list-item .class-button {
+    background-color: white;
+    border: 1px solid #1021e5;
+    border-radius: 13px;
+    color: #1021e5;
+    text-align: center;
+    vertical-align: center;
+    margin: 10px 8px;
+    padding: 5px 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    @include drop-shadow;
+
+    &:hover {
+      color: white;
+      background-color: #1021e5;
+    }
+  }
+}
