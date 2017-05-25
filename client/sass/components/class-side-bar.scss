@@ -1,9 +1,10 @@
 @import "../misc/drop-shadow";
 
 .class-side-bar {
-  float: right;
+  float: left;
   width: 200px;
   margin-left: 20px;
+  margin-top: 40px;
 
   .title {
     color: white;

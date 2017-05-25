@@ -33,7 +33,7 @@ export class ClassView extends React.Component<IClassState, IClassState> {
                         <h2>Files</h2>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Chat</h2>
+                        <iframe src="http://deadsimplechat.com/+CcNKO" width="800px" height="600px"></iframe>
                     </TabPanel>
                 </Tabs>
                 <ClassViewSideBar/>

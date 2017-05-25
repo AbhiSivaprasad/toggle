@@ -1,7 +1,7 @@
 import * as React from "react";
 import {IAppData} from "../data/IAppData";
 import {Header} from "./Header";
-import {ClassView} from "./ClassView";
+import {ClassChat} from "./ClassChat";
 import {ClassViewSideBar} from "./ClassViewSideBar";
 
 export class App extends React.Component<any, IAppState> {
@@ -19,7 +19,7 @@ export class App extends React.Component<any, IAppState> {
         return (
             <div className="app">
                 <Header data={this.state.data.header}/>
-                <ClassView data={this.state.data}/>
+                <ClassChat data={this.state.data}/>
             </div>
         );
     }
