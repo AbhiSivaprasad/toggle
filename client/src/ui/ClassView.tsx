@@ -3,7 +3,7 @@ import {IAppData} from "../data/IAppData";
 import {Feed} from "./Feed";
 import {Tabs, TabList, Tab, TabPanel} from "react-tabs";
 
-export class ClassView extends React.Component<IClassState, IClassState> {
+export class ClassView extends React.Component<IClassProps, IClassState> {
     public state: IClassState;
     public props: IClassProps;
 
