@@ -6,7 +6,7 @@ export class ClassChatInputBarOptions extends React.Component<IChatInputBarOptio
 
     public render() {
         return (
-            <button className="class-chat-input-bar-options">options</button>
+            <button className="options">options</button>
         );
     }
 }

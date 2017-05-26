@@ -9,9 +9,7 @@ export class SideBarClassListItem extends React.Component<ISideBarClassListItemP
 
     public render() {
         return (
-            <div className="side-bar-class-list-item">
-                <button type="button" className="class-button">{this.props.data}</button>
-            </div>
+            <button type="button" className="class-button">{this.props.data}</button>
         )
     }
 }

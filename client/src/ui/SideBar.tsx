@@ -1,6 +1,7 @@
 import * as React from "react";
 import {SideBarClassList} from "./SideBarClassList";
 import {ISideBarData} from "../data/ISideBarData";
+import {SideBarAddClass} from "./SideBarAddClass";
 
 export class SideBar extends React.Component<ISideBarProps, ISideBarState> {
     public state: ISideBarState;
@@ -10,12 +11,10 @@ export class SideBar extends React.Component<ISideBarProps, ISideBarState> {
     public render() {
         return (
             <div className="class-side-bar">
-                <SideBarClassList data={this.props.data.classes}/>
-                <div className="title">updates</div>
-                <div className="panel"></div>
-                <div className="title">classmates</div>
-                <div className="panel"></div>
-                <div className="panel"></div>
+                <div className="side-bar-class-list">
+                    <SideBarClassList data={this.props.data.classes} />
+                    <SideBarAddClass />
+                </div>
             </div>
         )
     }

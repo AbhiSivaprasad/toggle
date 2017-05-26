@@ -10,7 +10,7 @@ export class SideBarClassList extends React.Component<ISideBarClassListProps, IS
 
     public render() {
         return (
-            <div className="side-bar-class-list">
+            <div className="side-bar-current-class-list">
                 {this.props.data.classList.map((item: IClassListItemData, index: number) => {
                     return (<SideBarClassListItem data={item} key={index}/>)
                 })}

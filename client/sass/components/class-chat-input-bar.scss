@@ -1,12 +1,16 @@
 
 .class-chat-input-bar {
   padding: 20px;
-  float: bottom;
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  height: 15px;
+  margin: auto;
   border: solid;
 
   .message {
     display: inline-block;
-    width: 80%;
+    width: 90%;
     height: 40px;
     vertical-align: text-top;
   }
@@ -14,12 +18,13 @@
   .send-options {
     display: inline-block;
     .send {
-      float: top;
+      position: absolute;
+      top: 5px;
     }
 
-    .class-chat-input-bar-options {
-      float: bottom;
-      vertical-align: bottom;
+    .options {
+      position: absolute;
+      bottom: 5px;
     }
   }
 }
