@@ -1,0 +1,25 @@
+
+.class-chat-input-bar {
+  padding: 20px;
+  float: bottom;
+  border: solid;
+
+  .message {
+    display: inline-block;
+    width: 80%;
+    height: 40px;
+    vertical-align: text-top;
+  }
+
+  .send-options {
+    display: inline-block;
+    .send {
+      float: top;
+    }
+
+    .class-chat-input-bar-options {
+      float: bottom;
+      vertical-align: bottom;
+    }
+  }
+}

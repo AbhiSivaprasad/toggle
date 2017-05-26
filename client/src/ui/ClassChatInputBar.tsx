@@ -24,8 +24,10 @@ export class ClassChatInputBar extends React.Component<IChatInputBarProps, IChat
             <div className="class-chat-input-bar">
                 <input type="text" className="message" value={this.state.messageValue}
                     onChange={this.updateState} />
-                <button className="send">Send</button>
-                <ClassChatInputBarOptions/>
+                <div className="send-options">
+                    <button className="send">Send</button>
+                    <ClassChatInputBarOptions/>
+                </div>
             </div>
         );
     }
