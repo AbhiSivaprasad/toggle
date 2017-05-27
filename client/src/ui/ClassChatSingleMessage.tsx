@@ -15,7 +15,7 @@ export class ClassChatSingleMessage extends React.Component<IChatSingleMessagePr
                     {this.props.data.username}
                 </div>
                 <div className="timestamp">
-                    {this.props.data.time}
+                    {this.props.data.time.toString()}
                 </div>
                 <div className="message-body">
                     {this.props.data.message}
