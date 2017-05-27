@@ -21,6 +21,11 @@ export class ClassChatMessages extends React.Component<IClassChatMessagesProps, 
             </div>
         );
     }
+
+    private componentdidUpdate() {
+        const messagesObj = document.getElementById("class-chat-messages");
+        messagesObj.scrollTop = messagesObj.scrollHeight;
+    }
 }
 
 export interface IClassChatMessagesState {

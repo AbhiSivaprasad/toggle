@@ -1,6 +1,4 @@
 import * as React from "react";
-import {IClassListItemData} from "../data/IClassListItemData";
-
 
 export class SideBarClassListItem extends React.Component<ISideBarClassListItemProps, ISideBarClassListItemState> {
     public state: ISideBarClassListItemState;
@@ -9,7 +7,7 @@ export class SideBarClassListItem extends React.Component<ISideBarClassListItemP
 
     public render() {
         return (
-            <button type="button" className="class-button">{this.props.data.className}</button>
+            <button type="button" className="class-button">{this.props.classTitle}</button>
         )
     }
 }
@@ -18,5 +16,5 @@ export interface ISideBarClassListItemState {
 }
 
 export interface ISideBarClassListItemProps {
-    data: IClassListItemData
+    classTitle: string;
 }

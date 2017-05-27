@@ -19,7 +19,7 @@ export class App extends React.Component<any, IAppState> {
         return (
             <div className="app">
                 <Header data={this.state.data.header}/>
-                <ClassChat />
+                <ClassChat data={{username: "Abhi"}}/>
                 <SideBar data={this.state.data.sidebar}/>
             </div>
         );

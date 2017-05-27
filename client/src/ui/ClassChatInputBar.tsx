@@ -8,27 +8,36 @@ export class ClassChatInputBar extends React.Component<IChatInputBarProps, IChat
     constructor(props: IChatInputBarProps) {
         super(props);
 
-        this.state = {
-            messageValue: "Type a message..."
-        };
+        this.state = {messageValue: ""};
 
         this.updateState = this.updateState.bind(this);
+        this.submitHandler = this.submitHandler.bind(this);
     }
 
-    updateState(e) {
-        this.setState({messageValue: e.target.value});
+    updateState(event) {
+        this.setState({messageValue: event.target.value});
+    }
+
+    submitHandler(event) {
+        event.preventDefault();
+        this.props.messageSendHandler(this.state.messageValue);
+        this.setState({messageValue: ""});
     }
 
     public render() {
         return (
-            <div className="class-chat-input-bar">
-                <input type="text" className="message" value={this.state.messageValue}
-                    onChange={this.updateState} />
-                <div className="send-options">
+            <form className="class-chat-input-bar" onSubmit={this.submitHandler}>
+                <input type="text" className="message"
+                    value={this.state.messageValue}
+                    onChange={this.updateState}
+                    placeholder="Type a message..."
+                    required />
+
+                {/* <div className="send-options">
                     <button className="send">Send</button>
                     <ClassChatInputBarOptions/>
-                </div>
-            </div>
+                </div> */}
+            </form>
         );
     }
 }
@@ -38,4 +47,5 @@ export interface IChatInputBarState {
 }
 
 export interface IChatInputBarProps {
+    messageSendHandler(event): void;
 }

@@ -2,7 +2,6 @@ import * as React from "react";
 import {SideBarClassList} from "./SideBarClassList";
 import {ISideBarData} from "../data/ISideBarData";
 import {SideBarClassListItem} from "./SideBarClassListItem";
-import {IClassListItemData} from "../data/IClassListItemData";
 
 export class SideBarAddClass extends React.Component<ISideBarAddClassProps, ISideBarAddClassState> {
     public state: ISideBarAddClassState;
@@ -11,7 +10,7 @@ export class SideBarAddClass extends React.Component<ISideBarAddClassProps, ISid
 
     public render() {
         return (
-            <SideBarClassListItem data="Add Class" />
+            <SideBarClassListItem classTitle="Add Class" />
         )
     }
 }

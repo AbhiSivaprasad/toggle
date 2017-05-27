@@ -10,7 +10,7 @@ export class ClassChatSingleMessage extends React.Component<IChatSingleMessagePr
         const isFromMe = this.props.data.isFromMe ? "from-me" : "";
 
         return (
-            <div className={"message ${isFromMe}"}>
+            <div className={"message " + isFromMe}>
                 <div className="username">
                     {this.props.data.username}
                 </div>
