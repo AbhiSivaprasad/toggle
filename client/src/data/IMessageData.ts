@@ -1,6 +1,6 @@
 export interface IMessageData {
     username: string;
     message: string;
-    time: Date;
+    time: string;
     isFromMe: boolean;
 }

@@ -13,6 +13,8 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 import org.eclipse.jetty.websocket.api.Session;
 
+import javax.websocket.DeploymentException;
+
 
 public class Program {
 
@@ -24,6 +26,8 @@ public class Program {
         System.out.println("test");
 
         port(8000);
+
+
         webSocket("/chat", ChatWebSocketHandler.class);
         init();
 

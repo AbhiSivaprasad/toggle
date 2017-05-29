@@ -20,19 +20,18 @@ export class ClassChat extends React.Component<IClassChatProps, IClassChatState>
         this.webSocket.onmessage = this.receivedMessage.bind(this);
 
         this.messageSendHandler = this.messageSendHandler.bind(this);
-
-        console.log("console works");
     }
 
     public messageSendHandler(userMessage: string) {
-        let messageObj:IMessageData = {
+        let messageObj:any = {
             username: this.props.data.username,
-            time: new Date(),
-            isFromMe: true,
-            message: userMessage
+            message: userMessage,
         };
 
-        this.sendMessageToServer(userMessage);
+        this.sendMessageToServer(JSON.stringify(messageObj));
+
+        messageObj.isFromMe = true;
+        messageObj.time = ClassChat.getTimeString(new Date());
 
         this.pushMessage(messageObj);
     }
@@ -46,17 +45,13 @@ export class ClassChat extends React.Component<IClassChatProps, IClassChatState>
     public pushMessage(message: IMessageData) {
         const messageData:IMessagesData = this.state.data;
         messageData.messages.push(message);
+
         this.setState({data: messageData});
     }
 
     public receivedMessage(m) {
-
-        let messageObj:IMessageData = {
-            username: this.props.data.username,
-            time: new Date(),
-            isFromMe: false,
-            message: m.data
-        };
+        let messageObj = JSON.parse(m.data);
+        messageObj.isFromMe = false;
 
         this.pushMessage(messageObj);
     }
@@ -68,6 +63,12 @@ export class ClassChat extends React.Component<IClassChatProps, IClassChatState>
             console.log('Error: WebSocket is not supported by this browser.');
             return;
         }
+    }
+
+    public static getTimeString(e: Date) {
+        let h = (e.getHours() < 10 ? '0' : '') + e.getHours(),
+            m = (e.getMinutes() < 10 ? '0' : '') + e.getMinutes();
+        return h + ':' + m;
     }
 
     public render() {

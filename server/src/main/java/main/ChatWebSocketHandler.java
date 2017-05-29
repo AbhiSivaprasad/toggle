@@ -1,7 +1,12 @@
 package main;
 
-import org.eclipse.jetty.websocket.api.*;
+import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.*;
+
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Abhinand on 5/27/2017.
@@ -9,37 +14,31 @@ import org.eclipse.jetty.websocket.api.annotations.*;
 
 @WebSocket
 public class ChatWebSocketHandler {
-    private String sender, msg;
+    static Set<Session> members = Collections.synchronizedSet(new HashSet<Session>());
 
     @OnWebSocketConnect
     public void onConnect(Session user) throws Exception {
-        String username = "User" + Program.nextUserNumber++;
-        Program.userUsernameMap.put(user, username);
-        //Program.broadcastMessage(sender = "Server", msg = (username + " joined the chat"));
+        members.add(user);
 
-        System.out.println("socket connected");
-
-        for(Session s : Program.userUsernameMap.keySet()) {
-            System.out.println(Program.userUsernameMap.get(s));
-        }
+        System.out.println("connected");
     }
 
     @OnWebSocketClose
     public void onClose(Session user, int statusCode, String reason) {
-        String username = Program.userUsernameMap.get(user);
-        Program.userUsernameMap.remove(user);
-        Program.broadcastMessage(sender = "Server", msg = (username + " left the chat"));
-
-        System.out.println("socket closed");
+        members.remove(user);
     }
 
     @OnWebSocketMessage
-    public void onMessage(Session user, String message) {
-        Program.broadcastMessage(sender = Program.userUsernameMap.get(user), msg = message);
+    public void onMessage(Session user, String strMessage) throws IOException {
+        System.out.println("received message: " + strMessage);
 
-        System.out.println(message);
+        Message message = MessageDecoder.decode(strMessage);
 
-        System.out.println("socket sending...");
+        for(Session member : members) {
+            if(!user.equals(member)) {
+                member.getRemote()
+                      .sendString(MessageEncoder.encode(message));
+            }
+        }
     }
-
 }
