@@ -8,6 +8,7 @@ import {IClassChatData} from "../data/IClassChatData";
 export class ClassChat extends React.Component<IClassChatProps, IClassChatState> {
     public state: IClassChatState;
     public props: IClassChatProps;
+    public webSocket;
 
     constructor() {
         super();
@@ -15,7 +16,12 @@ export class ClassChat extends React.Component<IClassChatProps, IClassChatState>
         let emptyMessages: IMessagesData = {messages: []};
         this.state = {data: emptyMessages};
 
+        this.initializeSocket();
+        this.webSocket.onmessage = this.receivedMessage.bind(this);
+
         this.messageSendHandler = this.messageSendHandler.bind(this);
+
+        console.log("console works");
     }
 
     public messageSendHandler(userMessage: string) {
@@ -26,14 +32,42 @@ export class ClassChat extends React.Component<IClassChatProps, IClassChatState>
             message: userMessage
         };
 
+        this.sendMessageToServer(userMessage);
 
         this.pushMessage(messageObj);
     }
 
+    public sendMessageToServer(message: string) {
+        if(message !== "") {
+            this.webSocket.send(message);
+        }
+    }
+
     public pushMessage(message: IMessageData) {
-        let messageData:IMessagesData = this.state.data;
+        const messageData:IMessagesData = this.state.data;
         messageData.messages.push(message);
         this.setState({data: messageData});
+    }
+
+    public receivedMessage(m) {
+
+        let messageObj:IMessageData = {
+            username: this.props.data.username,
+            time: new Date(),
+            isFromMe: false,
+            message: m.data
+        };
+
+        this.pushMessage(messageObj);
+    }
+
+    public initializeSocket() {
+        if ('WebSocket' in window) {
+            this.webSocket = new WebSocket('ws://' + window.location.host + '/chat');
+        } else {
+            console.log('Error: WebSocket is not supported by this browser.');
+            return;
+        }
     }
 
     public render() {
