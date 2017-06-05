@@ -19,6 +19,12 @@
     &.from-me {
       .message-body {
         float: right;
+        background-color: rgb(238, 238, 238);
+        color: black;
+      }
+
+      .message-icon {
+        float: right;
       }
     }
 
