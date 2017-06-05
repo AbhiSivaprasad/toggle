@@ -9,17 +9,17 @@ export class ClassChatSingleMessage extends React.Component<IChatSingleMessagePr
     public render() {
         const isFromMe = this.props.data.isFromMe ? "from-me" : "";
 
+        const items = [
+            /*<div className="message-icon">
+
+             </div>,*/
+            <div className="message-body" key={0}>
+                {this.props.data.message}
+            </div>
+        ];
         return (
             <div className={"message " + isFromMe}>
-                <div className="username">
-                    {this.props.data.username}
-                </div>
-                <div className="timestamp">
-                    {this.props.data.time}
-                </div>
-                <div className="message-body">
-                    {this.props.data.message}
-                </div>
+                {this.props.data.isFromMe ? items.reverse() : items}
             </div>
         );
     }

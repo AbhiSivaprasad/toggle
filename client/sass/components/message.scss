@@ -1,3 +1,33 @@
-.message {
+.class-chat-messages {
+  .message {
+    display: block;
+    overflow: auto;
+    clear: both;
 
+    .message-body {
+      margin: 5px;
+      background-color: rgb(195, 200, 203);
+      display: inline-block;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 10px;
+      min-width: 30%;
+      color: white;
+    }
+
+    &.from-me {
+      .message-body {
+        float: right;
+      }
+    }
+
+    .message-icon {
+      background-color: #676767;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+    }
+  }
 }
