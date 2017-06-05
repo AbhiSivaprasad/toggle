@@ -13,8 +13,6 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 import org.eclipse.jetty.websocket.api.Session;
 
-import javax.websocket.DeploymentException;
-
 
 public class Program {
 
