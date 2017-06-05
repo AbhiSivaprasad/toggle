@@ -3,6 +3,8 @@
     display: block;
     overflow: auto;
     clear: both;
+    position: relative;
+    line-height: 100%;
 
     .message-body {
       margin: 5px;
@@ -13,7 +15,19 @@
       padding-right: 20px;
       border-radius: 10px;
       min-width: 30%;
+      max-width: calc(100% - 40px);
       color: white;
+      float: left;
+    }
+
+    .message-icon {
+      background-color: #676767;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      bottom: 0px;
+      float: left;
     }
 
     &.from-me {
@@ -26,14 +40,6 @@
       .message-icon {
         float: right;
       }
-    }
-
-    .message-icon {
-      background-color: #676767;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
     }
   }
 }
