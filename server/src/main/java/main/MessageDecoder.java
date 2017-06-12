@@ -1,6 +1,8 @@
 package main;
 
 
+import main.Data.Message;
+
 import javax.json.Json;
 import javax.json.JsonObject;
 import java.io.StringReader;
@@ -13,7 +15,7 @@ public class MessageDecoder  {
     public static Message decode(String strMessage) {
         JsonObject jsonMessage = Json.createReader(new StringReader(strMessage)).readObject();
 
-        return new Message(jsonMessage.getString("message"),
+        return MessageFactory.create(jsonMessage.getString("message"),
                 jsonMessage.getString("username"), new Date());
     }
 

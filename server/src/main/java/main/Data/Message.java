@@ -1,42 +1,39 @@
-package main;
+package main.Data;
 
 import java.util.Date;
 
 /**
- * Created by Abhinand on 5/28/2017.
+ * Created by Abhinand on 6/11/2017.
  */
 public class Message {
     private String message;
     private String username;
     private Date time;
 
-    public Message(String message, String username, Date time) {
-        this.message = message;
-        this.username = username;
-        this.time = time;
-    }
-
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public Message setMessage(String message) {
         this.message = message;
+        return this;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public Message setUsername(String username) {
         this.username = username;
+        return this;
     }
 
     public Date getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public Message setTime(Date time) {
         this.time = time;
+        return this;
     }
 }

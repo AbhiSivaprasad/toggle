@@ -1,5 +1,7 @@
 package main;
 
+import main.Data.Message;
+
 import javax.json.*;
 
 import java.text.SimpleDateFormat;
