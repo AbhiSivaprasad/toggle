@@ -1,6 +1,7 @@
 package main;
 
 
+import main.Data.Factory.MessageFactory;
 import main.Data.Message;
 
 import javax.json.Json;

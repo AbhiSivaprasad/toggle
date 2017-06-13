@@ -1,11 +1,13 @@
 package main.Data;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by Abhinand on 6/11/2017.
  */
 public class Message {
+    private UUID messageId;
     private String message;
     private String username;
     private Date time;
